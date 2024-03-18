@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velocity Scroll</title>
+    <link rel="stylesheet" href="main.css">
+  </head>
+  
+  <body>
+    <div class="scroll-wrapper">
+      <section>
+        <h1>Gallery</h1>
+        <div class="scroll-container">
+
+          <div class="slide">
+            <div class="skew-group gallery">
+              <img src="https://images.unsplash.com/photo-1710269389244-00268547a457?q=80&w=6956&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="city landscape">
+              <img src="https://images.unsplash.com/photo-1710403690356-e651c9730491?q=80&w=2892&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="city landscape">
+              <img src="https://images.unsplash.com/photo-1709842665072-6404e47a5386?q=80&w=5472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="city landscape">
+              <img src="https://images.unsplash.com/photo-1709971359786-cfb4bcc1e344?q=80&w=4000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="city landscape">
+            </div>
+          </div>
+
+          <div class="slide">
+            <div class="skew-group gallery">
+              <img src="https://images.unsplash.com/photo-1710269389244-00268547a457?q=80&w=6956&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="city landscape">
+              <img src="https://images.unsplash.com/photo-1710403690356-e651c9730491?q=80&w=2892&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="city landscape">
+              <img src="https://images.unsplash.com/photo-1709842665072-6404e47a5386?q=80&w=5472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="city landscape">
+              <img src="https://images.unsplash.com/photo-1709971359786-cfb4bcc1e344?q=80&w=4000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="city landscape">
+            </div>
+          </div>
+
+          <div class="slide">
+            <div class="skew-group gallery">
+              <img src="https://images.unsplash.com/photo-1710269389244-00268547a457?q=80&w=6956&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="city landscape">
+              <img src="https://images.unsplash.com/photo-1710403690356-e651c9730491?q=80&w=2892&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="city landscape">
+              <img src="https://images.unsplash.com/photo-1709842665072-6404e47a5386?q=80&w=5472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="city landscape">
+              <img src="https://images.unsplash.com/photo-1709971359786-cfb4bcc1e344?q=80&w=4000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="city landscape">
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.40/dist/lenis.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger)
+
+      let slides = gsap.utils.toArray('.slide')
+
+      let scrollTween = gsap.to(slides, {
+        xPercent: -100 * (slides.length - 1),
+        ease: 'none',
+        scrollTrigger: {
+          trigger: 'section',
+          pin: true,
+          scrub: 0.1,
+          end: '+=3000',
+
+          onUpdate: self => {
+            let skewAmount = self.getVelocity() / 200
+            let scaleAmount = 1 + Math.abs(self.getVelocity() / 20000)
+
+            slides.forEach(slide => {
+              gsap.to(slide.querySelector('.skew-group'), {
+                skewX: skewAmount,
+                scaleY: scaleAmount,
+                overwrite: true,
+                ease: 'power1.out',
+              })
+            })
+          },
+
+          onScrubComplete: () => {
+            slides.forEach(slide => {
+              gsap.to(slide.querySelector('.skew-group'), {
+                skewX: 0,
+                scaleY: 1,
+                duration: 0.5,
+                ease: 'power1.out',
+              })
+            })
+          }
+        }
+      })
+
+
+      const lenis = new Lenis()
+
+      function raf(time) {
+        lenis.raf(time)
+        requestAnimationFrame(raf)
+      }
+
+      requestAnimationFrame(raf)
+    </script>
+
+  </body>
+</html>
+
